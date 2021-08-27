@@ -1,0 +1,482 @@
+/* position of header & main+footer*/
+header{
+  height: 100%;
+  max-height: calc(100vh - 20px); /* the last item can be shown clearly on the menu even when zoom-in*/
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  text-align: center;
+  background-image: url('hong-kong2.jpg');
+  background-repeat: no-repeat; /* don't repeat the background image */
+  background-position: center; /* position the backgroun image at the centre */
+  background-size: cover;
+  color:white;
+}
+.header_bkgd {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.display_content {
+  margin-left: 20%;
+  padding: 0px 20px;
+  position: relative;
+  float: left;
+  left: 0;
+}
+/* nav menu */
+
+/* Style the tab */
+.tab {
+  margin: 0;
+  padding: 0;
+  background-color:hsla(0,0%,50%,0.3); /* grey with opacity */
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  display: block;
+  background-color: inherit;
+  font-family: 'Fresca';
+  background-color: rgba(0, 0, 0, 0.3);
+  color:rgb(255, 193, 193);
+  padding: 22px 16px;
+  font-size: 24px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color:rgb(255, 255, 255);
+  color:black;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: rgba(204, 204, 204, 0.6);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); /*auto auto auto;*/
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  padding: 10px;
+}
+/* sections are arranged in table format */
+section {
+  background-color: rgb(255, 193, 193);
+  text-align: center;
+  padding: 20px 20px;
+}
+
+
+/*image & map size*/
+iframe, .foodImage {
+  width: 300px;
+  height: 225px;
+}
+/*  header size */
+h1 {
+   font-family: 'Galada';
+   font-size: 32px;
+}
+h2 {
+   font-family: 'Acme';
+   font-size: 24px;
+}
+p, a {
+  font-family: 'Montaga'; 
+}
+.update {
+  font-style: italic;
+}
+footer {
+  text-align: center;   
+  font-family: 'Alata';
+  padding-top: 20px;
+  padding-bottom: 30px; /* not too close with the bottom border */
+}
+.close {
+  opacity: 0;
+}
+
+/*style options*/
+.radio-group {
+  color: powderblue;
+  background-color: black;
+  font-family: 'Acme';
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  opacity: 0.6;
+  text-align: right;
+}
+.radio-group:hover{
+  opacity: 1.0;
+}
+
+/*dropdown list*/
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0; /*left to right*/
+  background-color: #f9f9f9;
+  min-width: 210px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.converted_price {
+  color: rgb(0, 177, 0);
+  font-weight: bold;
+  background-color: yellow;
+}
+
+.flag, .map{
+  width:24px;
+  height:18px;
+  border-radius:15px 50px;
+  vertical-align: text-top;
+}
+
+/*dropdown list2*/
+.dropbtn2 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  left: 0; /*left to right*/
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dropdown-content2 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content2 a:hover {background-color: #f1f1f1;}
+
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+.dropdown2:hover .dropbtn2 {
+  background-color: #3e8e41;
+}
+
+/*dropdown list3*/
+.dropbtn3 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown3 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content3 {
+  display: none;
+  position: absolute;
+  left: 0; /*left to right*/
+  background-color: #f9f9f9;
+  min-width: 190px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dropdown-content3 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content3 a:hover {background-color: #f1f1f1;}
+
+.dropdown3:hover .dropdown-content3 {
+  display: block;
+}
+
+.dropdown3:hover .dropbtn3 {
+  background-color: #3e8e41;
+}
+
+/*Collapsibles/Accordion*/
+ /* Style the buttons that are used to open and close the accordion panel */
+ .accordion {
+  background-color: #F47DBB;
+  cursor: pointer;
+  padding: 18px;
+  font-size: 28px;
+  width: 100%;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover {
+  background-color: #FF99CC;
+}
+
+.active {
+  background-color: #D94496;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion.active:after {
+  content: "\2212";
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  background-color: #fad2e3;
+  display: none;
+  text-align: center;
+  overflow: hidden;
+  transition: max-height 0.1s ease-out;
+}
+
+/* aside */
+aside img{
+  opacity: 0.7;
+}
+a:hover img{
+  opacity: 1;
+}
+
+/*progress bar*/
+ /* Style the header: fixed position (always stay at the top) */
+ .header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+} 
+
+/*toolkit hover*/
+#tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  
+}
+
+#tooltip .tooltiptext {
+  visibility: hidden;
+  width: 130px;
+  font-size: 20px;
+  background-color: whitesmoke;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 5px;
+  left: 60%;
+  
+}
+
+#tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent whitesmoke transparent transparent;
+}
+#tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/*horiontal bar*/
+.icon-bar {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  width: 100%; /* Full-width */
+  background-color: #555; /* Dark-grey background */
+  overflow: auto; /* Overflow due to float */
+}
+
+.icon-bar a {
+  float: left; /* Float links side by side */
+  text-align: center; /* Center-align text */
+  width: 50%; /* Equal width (5 icons with 20% width each = 100%) */
+  padding: 12px 0; /* Some top and bottom padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  color: white; /* White text color */
+  font-size: 36px; /* Increased font size */
+}
+
+.icon-bar a:hover {
+  background-color: #000; /* Add a hover color */
+}
+
+
+/*.active {
+  background-color: #4CAF50; /* Add an active/current color */
+/*}*/
+
+/*flip an image*/
+img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+/*social media icons*/
+#followus a {
+  padding: 30px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 20px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+#followus a:hover {
+  opacity: 1;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram { 
+  color: white;
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+
+/*filter by location*/
+.filterDiv {
+  display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}

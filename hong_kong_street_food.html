@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+
+<audio id="beep-one" preload="auto">
+    <!-- <source src="beep.mp3">
+    </source> -->
+    <source src="beep.ogg" type="audio/ogg">
+    <!-- </source> -->
+    <!-- Your browser isn't invited for super fun time. -->
+</audio>
+
+<head>
+    <title>Hong Kong Street Food</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Introduction of Hong Kong street food">
+    <meta name="keywords"
+        content="Hong Kong, street food, Red Bean Ice, Salty-Lemon Seven-Up, Silk-stocking Milk Tea, Sugar Cane Juice, Yuen Yeung, Beef Offal, Curry Fish Balls, Deep-fried Pig Intestine, Imitation Shark’s Fin, Rice Noodle Roll, Shumai, Stinky Tofu, Soy-braised Cuttlefish & Octopus, Stuffed Three Treasures, Egg Tart, Egg Waffle, Milk Pudding, Sugar Donut, Tofu Pudding">
+    <meta name="author" content="Hong Kong">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--jQuery for navigation -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!--jQuery for hover sound -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <!--my js -->
+    <script src="myFunctions.js"></script>
+    <!--style -->
+    <link id="style_no" rel="stylesheet" type="text/css" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="icon.svg" sizes="any" type="image/svg+xml">
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Galada' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Fresca' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montaga' rel='stylesheet'>
+</head>
+<!--This is a comment. Comments are not displayed in the browser-->
+
+<body>
+    <header>
+
+        <div class="header_bkgd">
+            <div class="radio-group">
+                <input onclick="changeStyle('style1.css')" type="radio" name="style_option" checked><label
+                    for="style1">STYLE 1</label>
+                <input onclick="changeStyle('style2.css')" type="radio" name="style_option"><label for="style2">STYLE
+                    2</label>
+            </div>
+            <h1>Hong Kong street food</h1>
+            <p>Welcome to Hong Kong! Gourmet Paradise! </p>
+            <p>Hong Kong draws many visitors for its flavourful culinary scene — some come for the refined dim
+                sum
+                experience, others for the more local noodle shops. However, there is an often-overlooked facet
+                of
+                Hong Kong’s gourmet reputation — its humble street food.Wherever you are in Hong Kong, we ensure
+                you
+                that you can find delicious streetside snacks easily. Here is your guide to the 19 best street
+                food
+                in Hong Kong.
+            <div class="update">
+                <p>Updated in <time datetime="2021-04">April 2021</time></p>
+            </div>
+
+        </div>
+        <nav>
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'Drinks')" id="defaultOpen">Drinks</button>
+                <button class="tablinks" onclick="openCity(event, 'Appetizers-MainCourse')">Appetizers & Main
+                    Course</button>
+                <button class="tablinks" onclick="openCity(event, 'Dessert')">Dessert</button>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+
+        </nav>
+    </header>
+    <div class="display_content">
+        <main>
+            <article>
+                <div class="dropdown">
+                    <button onclick="myDropDown()" class="dropbtn"><i class="fa fa-dollar"
+                            style="color:rgb(49, 49, 49)"></i><i class="fa fa-exchange" style="color:black"></i><i
+                            class="fa fa-eur" style="color:rgb(49, 49, 49)"></i> Currency Converter</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a class="btn" onclick="myConverter('CAD', 0.16)"><img class="flag" src="cad.svg">CAD</a>
+                        <a class="btn" onclick="myConverter('EUR', 0.11)"><img class="flag" src="eur.svg">EUR</a>
+                        <a class="btn" onclick="myConverter('USD', 0.13)"><img class="flag" src="usd.svg">USD</a>
+                    </div>
+                </div>
+                <div class="dropdown2">
+                    <button onclick="myDropDown2()" class="dropbtn2"><i class="fa fa-sort" style="color:black"></i> Sort
+                        By</button>
+                    <div id="myDropdown2" class="dropdown-content2">
+                        <a class="btn" onclick="mySort()">$→$$$</a>
+                        <a class="btn" onclick="mySort2()">$$$→$</a>
+                        <a class="btn" onclick="mySort3()">A→Z</a>
+                        <a class="btn" onclick="mySort4()">Z→A</a>
+                    </div>
+                </div>
+                <div class="dropdown3">
+                    <button onclick="myDropDown3()" class="dropbtn3"><i class="fa fa-filter" style="color:black"></i>
+                        Filter By Location</button>
+                    <div id="myDropdown3" class="dropdown-content3">
+                        <a class="btn" onclick="filterSelection('all')"><img class="map" src="showall.svg"> Show all</a>
+                        <a class="btn" onclick="filterSelection('hkisland')"><img class="map" src="hkisland.svg"> Hong Kong Island</a>
+                        <a class="btn" onclick="filterSelection('kowloon')"><img class="map" src="kowloon.svg"> Kowloon</a>
+                        <a class="btn" onclick="filterSelection('newterritories')"><img class="map" src="newterritories.svg"> New Territories</a>
+
+                    </div>
+                </div>
+
+                <div class="table" id="contentDiv">
+                    <div id="Drinks" class="tabcontent">
+                        <section class="filterDiv newterritories">
+                            <h1 id="RedBeanIce">Red Bean Ice</h1>
+                            <p>Red bean ice is a drink commonly found in Hong Kong. In Cantonese, it is called hong dou
+                                bing. It is usually served in restaurants like cha chaan teng. The standard ingredients
+                                include adzuki beans, light rock sugar syrup, and evaporated milk. It’s cold and sweet.
+                                Kids
+                                absolutely love this!</p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="red-bean-ice.jpg" alt="Red Bean Ice">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">24</span> per cup <span class="converted_price"
+                                    id="currency_value14"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.9475947417027!2d114.12750799999999!3d22.5061493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f60e17779895%3A0x23b825b7544eedeb!2sGuong%20Shing%20Ice%20Cafe!5e0!3m2!1sen!2shk!4v1617184902570!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Guong Shing Ice Cafe, 10 San Shing Ave, Sheung Shui</p>
+                        </section>
+                        <section class="filterDiv kowloon">
+                            <h1 id="Salty-LemonSeven-Up">Salty-Lemon Seven-Up</h1>
+                            <p> Though anything salty with a soft drink seems like a bad idea, this drink is actually
+                                not as disgusting as you think and it's great for when you have a sore throat thanks to
+                                the preserved salted limes in it. Salty limes with 7up, or ham ling chut, is served on
+                                ice and does everything a drink with your meal is supposed to; quench your thirst and
+                                cut right through all the rich dishes you might be indulging in.
+                            </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="saltylemonsevenup.jpg" alt="Salty-Lemon Seven-Up">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">22</span> per cup <span class="converted_price"
+                                    id="currency_value19"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d326.22086518796664!2d114.16816965950518!3d22.324620740301466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400c84f755fc7%3A0x8be84595d44d5dcf!2sKam%20Wah%20Cafe%20%26%20Bakery!5e0!3m2!1sen!2shk!4v1618377546437!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Kam Wah Cafe, G/F, 47 Bute Street, Prince Edward </p>
+                        </section>
+                        <section class="filterDiv hkisland">
+                            <h1 id="Silk-stockingMilkTea">Silk-stocking Milk Tea</h1>
+                            <p>Hong Kong-style Milk Tea is a tea drink combining black tea and milk. The reason why this
+                                drink is named "silk-stocking milk tea" is that the drink is repeatedly filtered by a
+                                sackcloth bag to make the tea smoother. The bag is thus coloured in brown which looks
+                                like
+                                the silk-stocking. Moreover, the skill of making "silk-stocking milk tea" has been
+                                listed
+                                into The Intangible Cultural Heritage Inventory of Hong Kong.
+                            </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="silk-stocking-milk-tea.jpg"
+                                alt="Silk-stocking Milk Tea">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">20</span> per cup <span class="converted_price"
+                                    id="currency_value13"></span></p>
+                            <h2>Where to find it?</h2><iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1845.937485740443!2d114.15262384007822!3d22.28272549635113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404007b6fb3ed51%3A0x3f55838a3a330da3!2sLan%20Fong%20Yuen!5e0!3m2!1sen!2shk!4v1617182775812!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Lan Fong Yuen, G/F, 2 Gage Street, Central </p>
+                        </section>
+                        <section class="filterDiv hkisland">
+                            <h1 id="SugarCaneJuice">Sugar Cane Juice</h1>
+                            <p> Most every street food stall will have a drinks section that offers refreshments to
+                                complement your food. Of the many choices you’ll be presented with, we recommend
+                                grabbing a
+                                cup of sugar cane juice. Refreshing and extremely sweet, it’s usually made on the spot
+                                by
+                                pressing steamed sugar cane with a machine. You’ll spot a shop that sells it from a mile
+                                away — it’ll have a large bucket of canes jutting out the side, and a long line of
+                                thirsty
+                                people in front.</p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="sugar-cane-juice.jpg" alt="Sugar Cane Juice">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">32</span> per bottle <span class="converted_price"
+                                    id="currency_value11"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1845.9295204048396!2d114.151804610983!3d22.283328827569495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404007b832372b5%3A0x176f67a2f86b2aa7!2sKung%20Lee%20Sugar%20Cane%20Drink!5e0!3m2!1sen!2shk!4v1617179789664!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Kung Lee Sugar Cane Drink, 60 Hollywood Road, Central</p>
+                        </section>
+                        <section class="filterDiv kowloon">
+                            <h1 id="YuenYeung">Yuen Yeung</h1>
+                            <p> Coffee or tea? Yuen Yeung (coffee with tea) is one of the most popular drinks in Hong
+                                Kong. Tasty and energizing, this drink is made out of coffee and tea, and has been
+                                modernized to adapt to the ever-changing needs of customers. In a perfect blend of
+                                Yuenyeung , one can neither taste the milk tea nor the black coffee.
+                            </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="yuenyeung.jpg" alt="Yuen Yeung">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">25</span> per cup <span class="converted_price"
+                                    id="currency_value16"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.6741503896687!2d114.1604932508217!3d22.32815998523706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400b412d9b3ad%3A0xdfbf953d3be62536!2sKeung%20Kee!5e0!3m2!1sen!2shk!4v1618072601439!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Keung Kee, 219 Ki Lung St, Sham Shui Po</p>
+                        </section>
+                    </div>
+                    <div id="Appetizers-MainCourse" class="tabcontent">
+                        <section class="filterDiv hkisland">
+                            <h1 id="BeefOffal">Beef Offal</h1>
+                            <p>Hongkongers were snacking on cow offal long before nose-to-tail became a dining trend.
+                                Slow-cooked
+                                beef smooth tripe, small intestines, large intestines, honeycomb tripe, lungs and more
+                                are
+                                served
+                                with chu hou sauce (a soybean-based condiment) and refreshingly sweet turnip in a take
+                                away
+                                bowl.
+                            </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="beef-offal.jpg"
+                                alt="Beef Offal">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">40</span> per bowl<span class="converted_price"
+                                    id="currency_value1"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.8625537612675!2d114.15197531402445!3d22.28319578533245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404007b604e947d%3A0xdb6a909a34648092!2sShui%20Kee!5e0!3m2!1sen!2sca!4v1613393706521!5m2!1sen!2sca"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Shui Kee, 2 Gutzlaff Street, Central</p>
+                        </section>
+                        <section class="filterDiv kowloon">
+                            <h1 id="CurryFishBalls">Curry Fish Balls</h1>
+                            <p>Curry fishballs are probably Hong Kong’s most iconic street snack – nearly every savoury
+                                street
+                                stall
+                                sells these. Though they’re mostly made from flour these days and contain almost no fish
+                                meat,
+                                this has had little effect on the snack's popularity. Springy in texture, the bite-sized
+                                spheres
+                                bob
+                                about in a strong curry sauce before they're skewered on a bamboo stick or ladled into a
+                                takeaway bowl for on-the-pavement enjoyment. </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="curry-fish-balls.jpg" alt="Curry Fish Balls">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">12</span> per skewer <span class="converted_price"
+                                    id="currency_value2"></span>
+                            </p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.403108051472!2d114.17628911495476!3d22.300589485323382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400ef69788b2f%3A0x966ecf585c481d33!2sLiang%20Liang%20Noodles%20Shop!5e0!3m2!1sen!2shk!4v1614496475537!5m2!1sen!2shk"></iframe>
+                            <p>Address: Liang Liang Noodles Shop, Shop 22-23, G/F, New Mandarin Plaza, 14 Science Museum
+                                Road,
+                                Tsim Sha Tsui</p>
+                        </section>
+                        <section class="filterDiv kowloon">
+                            <h1 id="Deep-friedPigIntestine">Deep-fried Pig Intestine</h1>
+                            <p>These bright orange rounds are made by wrapping various layers of pig intestines into a
+                                sausage-like
+                                bundle. Trust us: it’s really much more appealing than it sounds, especially when it’s
+                                deep-fried in
+                                oil until the outer casing becomes crisp while the centres remain moist with an
+                                ever-so-slight
+                                chewiness. Enjoy these skewered things with a squeeze of sweet sauce. </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="deep-fried-pig-intestine.jpg"
+                                alt="Deep-fried Pig Intestine">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">15</span> per skewer <span class="converted_price"
+                                    id="currency_value3"></span>
+                            </p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.0024503751993!2d114.1694518148702!3d22.315747085315618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400c6e9b15555%3A0xddb6a8a216a76ed5!2sHe%20Cang%20Guilin%20Night%20Market!5e0!3m2!1sen!2shk!4v1613407120263!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: He Cang Guilin Night Market, 55 Dundas Street, Mong Kok</p>
+                        </section>
+                        <section class="filterDiv kowloon">
+                            <h1 id="ImitationShark’sFin">Imitation Shark’s Fin</h1>
+                            <p>Three reasons to try this popular street snack: 1) it’s much more ethical than real
+                                shark’s
+                                fin;
+                                2) it’s also much, much cheaper than the real deal; and 3) it’s absolutely delicious.
+                                The
+                                thick,
+                                umami broth usually brims with glass noodles and shredded black fungus, as well as
+                                shredded
+                                chicken,
+                                fish or duck. Add a splash of vinegar or pepper for some extra punch.</p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="Imitation-shark’s-fin.jpeg"
+                                alt="Imitation Shark’s Fin">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">30</span> per bowl <span class="converted_price"
+                                    id="currency_value6"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.2422849819104!2d114.16888181486992!3d22.306674885320223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400ea5a01a115%3A0xdd32d9f2c6f0f2ab!2sBlock%2018%20Doggie&#39;s%20Noodle!5e0!3m2!1sen!2shk!4v1613400774924!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Block 18 Doggie's Noodle, 27-31 Ning Po Street, Yau Ma Tei</p>
+                        </section>
+                        <section class="filterDiv newterritories">
+                            <h1 id="RiceNoodleRoll">Rice Noodle Roll</h1>
+                            <p>Loved for its smooth texture and distinct al dente chew, cheung fun is made by rolling
+                                steamed
+                                rice
+                                noodle sheets into bundles, then chopping them into two-bite pieces. Unlike the type
+                                served
+                                at
+                                dim
+                                sum restaurants, the streetside variety usually comes without fillings. It’s relatively
+                                bland on
+                                its own, which is why it’s eaten with a healthy dousing of sauces (sweet, peanut, chilli
+                                and
+                                soy)
+                                and sesame seeds. </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="cheung-fun.jpg" alt="Rice Noodle Roll">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">20</span> per bowl <span class="converted_price"
+                                    id="currency_value7"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.443531159243!2d114.17628051402664!3d22.37463108528494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340407a794cfe44b%3A0x6bf1f92b64ea3d3d!2sKwan%20Kee!5e0!3m2!1sen!2sca!4v1613390351156!5m2!1sen!2sca"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Kwan Kee, 81a Chik Fu St, Tai Wai</p>
+                        </section>
+                        <section class="filterDiv kowloon">
+                            <h1 id="Shumai">Shumai</h1>
+                            <p>Immediately recognisable by its bright yellow wrapper, this ubiquitous streetside snack
+                                differs
+                                from its pork-filled counterpart served in dim sum parlours in that it’s made with flour
+                                kneaded
+                                with
+                                a bit of fish meat (although most stalls forego the latter ingredient completely
+                                nowadays to
+                                cut
+                                costs). These are then steamed and doused in soy sauce. Those who crave a kick of heat
+                                can
+                                also
+                                pile on the chilli sauce. Like fishballs, you’ll find steamed siu mai at most savoury
+                                snack
+                                stalls.
+                            </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="shumai.jpg" alt="Shumai">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">20</span> per bowl <span class="converted_price"
+                                    id="currency_value8"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d461.3021784086227!2d114.13774076720438!3d22.33786203040384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f8ab627fb68f%3A0x597b0e308ab5e3c1!2sHung%20Fook%20Tong!5e0!3m2!1sen!2shk!4v1613400860743!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Hung Fook Tong, Mei Foo Station, Mei Foo</p>
+                        </section>
+                        <section class="filterDiv kowloon">
+                            <h1 id="StinkyTofu">Stinky Tofu</h1>
+                            <p>Despite its pungent odour, stinky tofu is one of the most delicious snacks you can find
+                                on
+                                our
+                                streets. The bean curd gets its distinct funk from a lengthy process of fermentation,
+                                usually in
+                                a
+                                brine of milk, vegetables or even meat. It’s then deep-fried and usually served with
+                                chilli
+                                sauce.
+                                The outer layer is crisp and golden and gives way to a soft and creamy centre. If you
+                                can
+                                get
+                                past
+                                the smell, this stinky snack is sure to please. </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="stinky-tofu.jpg" alt="Stinky Tofu">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">6</span> per piece <span class="converted_price"
+                                    id="currency_value9"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.800228718589!2d114.16740821487025!3d22.323393785311552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400c9b1340001%3A0x264020f581b92b86!2sDelicious%20Food%20-%20Stinky%20Tofu!5e0!3m2!1sen!2sca!4v1613389446350!5m2!1sen!2sca"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Delicious Food - Stinky Tofu, Shop 10, G/F, 30-32 Nullah Road, Prince Edward</p>
+                        </section>
+                        <section class="filterDiv kowloon">
+                            <h1 id="Soy-braisedCuttlefish&Octopus">Soy-braised Cuttlefish & Octopus</h1>
+                            <p> Bright orange and with tentacles and suction cups still intact, these might not be the
+                                most
+                                visually appealing of Hong Kong’s street foods, but they sure are delicious. The
+                                cuttlefish
+                                and octopus are usually boiled quickly until just tender and then dipped in a soy-based
+                                marinade for flavour. Eat them on a bamboo stick with a lick of mustard, as is de
+                                rigueur.
+                            </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="soy-braised-cuttlefish-&-octopus.jpg"
+                                alt="Soy-braised Cuttlefish & Octopus">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">15</span> per skewer <span class="converted_price"
+                                    id="currency_value12"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1845.7170296136878!2d114.17346202926825!3d22.299418139891074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400ee79874ecb%3A0x1edf66aa3ec1ff29!2sFat%20Boy%20Shop!5e0!3m2!1sen!2shk!4v1617181738540!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Fat Boy Shop, no.3 G1 Workingport Commercial Building, Hau Fook St, Tsim Sha
+                                Tsui
+                            </p>
+                        </section>
+                        <section class="filterDiv kowloon">
+                            <h1 id="StuffedThreeTreasures">Stuffed Three Treasures</h1>
+                            <p> Alongside more modern innovations in street food such as mini egg puffs, you will find a
+                                smattering
+                                of fried foods on the menus of street stalls. Most commonly seen is what’s known to
+                                Hongkongers
+                                as
+                                ’three treasures’. Pieces of eggplant, tofu, and bell pepper are stuffed with fish paste
+                                and
+                                then
+                                fried. Usually eaten with soy sauce, these three dishes combine the heartiness of fish
+                                paste
+                                with
+                                the natural flavour of each of the different wrappers.</p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="three-stuffed-treasures.jpg"
+                                alt="Stuffed Three Treasures">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">10</span> for 3 pieces <span class="converted_price"
+                                    id="currency_value10"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.596496686784!2d114.16140201487045!3d22.33109508530763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400b4c0482495%3A0xf427590c637af04f!2sKung%20Wo%20Dou%20Bun%20Chong!5e0!3m2!1sen!2sca!4v1613388750785!5m2!1sen!2sca"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Kung Wo Beancurd Factory, G/F, 118 Pei Ho Street, Sham Shui Po</p>
+                        </section>
+                    </div>
+                    <div id="Dessert" class="tabcontent">
+                        <section class="filterDiv hkisland">
+                            <h1 id="EggTart">Egg Tart</h1>
+                            <p>Said to be one of the favourite snacks of Chris Patten, the last British governor of Hong
+                                Kong,
+                                the
+                                egg tart is a very different beast from the egg waffle. It consists of a creamy yellow
+                                custard
+                                filling baked in either a cookie or a flaky pastry crust. Either crust perfectly
+                                complements
+                                the
+                                gooey, sweet filling.</p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="egg-tarts.jpg" alt="Egg Tart">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">6</span> per piece <span class="converted_price"
+                                    id="currency_value4"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.879972703473!2d114.1513583149543!3d22.282536085332712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404007b721b4563%3A0x22d765d151d22219!2sTai%20Cheong%20Bakery!5e0!3m2!1sen!2sca!4v1613392142973!5m2!1sen!2sca"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Tai Cheong Bakery, 35 Lyndhurst Terrace, Central</p>
+                        </section>
+                        <section class="filterDiv hkisland">
+                            <h1 id="EggWaffle">Egg Waffle</h1>
+                            <p>It's hard to resist the sweet, heavenly smell of eggettes, known as gai daan zai in
+                                Cantonese.
+                                These are made by pouring egg batter onto a griddle pan and cooking until it's crisp on
+                                the
+                                outside
+                                and soft and fluffy on the inside. Most vendors will offer a no-frills, original egg
+                                flavour
+                                and
+                                some places might do chocolate, sesame and green tea, among other crazier incarnations.
+                            </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="egg-waffles.jpg" alt="Egg Waffle">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">15</span> per piece <span class="converted_price"
+                                    id="currency_value5"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6506540926484!2d114.19943821402465!3d22.291219485328323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040105144c8987%3A0x45589bf7bc18bc3f!2sLee%20Keung%20Kee%20North%20Point!5e0!3m2!1sen!2sca!4v1613391899495!5m2!1sen!2sca"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Lee Keung Kee North Point Egg Waffle, 492 King's Road, North Point</p>
+                        </section>
+                        <section class="filterDiv kowloon">
+                            <h1 id="MilkPudding">Milk Pudding</h1>
+                            <p>Simple yet delicious, ‘double skin’ milk pudding is a creamy treat typically made using
+                                only egg white, milk and sugar. The trick lies in getting the double layered skin to
+                                form on the surface. Though not the most appealing in name, a taste of this warm and
+                                smooth pudding immediately warms the belly. </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="milk-pudding.jpg" alt="Milk Pudding">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">42</span> per bowl <span class="converted_price"
+                                    id="currency_value17"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d461.38491922647995!2d114.17039067568794!3d22.312838447853075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400c0e26ee01f%3A0x3f8a89d8b84f0381!2sYee%20Shun%20Milk%20Company%20-Yau%20Ma%20Tei!5e0!3m2!1sen!2shk!4v1618117944842!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Yee Shun Milk Company, 513 Nathan Rd, Yau Ma Tei</p>
+                        </section>
+                        <section class="filterDiv newterritories">
+                            <h1 id="SugarDonut">Sugar Donut</h1>
+                            <p>Sugar donut (or “Sa Yong” in Cantonese) is a Cantonese style donut. The main ingredients
+                                are sugar, lard, eggs and flour. The kneaded and risen dough is deep fried until golden
+                                brown before it is dusted with sugar. The outcome is a sugar donut that is crispy on the
+                                outside and fluffy in the inside. </p>
+                            <h2>What does it look like?</h2>
+                            <img class="foodImage" id="foodImg" src="sugar-donut.jpg" alt="Sugar Donut">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">16</span> per piece <span class="converted_price"
+                                    id="currency_value18"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d388.13788173537!2d113.86286561921415!3d22.254846953900998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340158d240b08a91%3A0x4a94ce63f001ade6!2sTai%20O%20Bakery!5e0!3m2!1sen!2shk!4v1618325106465!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Tai O Bakery,no. 66, Kat Hing Street, Tai O, Lantau Island</p>
+                        </section>
+                        <section class="filterDiv newterritories">
+                            <h1 id="TofuPudding">Tofu Pudding</h1>
+                            <p> Tofu pudding is essentially a bowl of the smoothest and softest bean curd served in
+                                clear
+                                syrup and sweetened ginger. Its melt-in-your-mouth silky texture makes it one of the
+                                most
+                                beloved desserts in Hong Kong.</p>
+                            <h2>What does it look like?</h2>
+                            <img loading="lazy" class="foodImage" id="foodImg" src="tofu-pudding.jpg"
+                                alt="Tofu Pudding">
+                            <h2>What's the price?</h2>
+                            <p>HKD <span class="price">15</span> per bowl <span class="converted_price"
+                                    id="currency_value15"></span></p>
+                            <h2>Where to find it?</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.5329169150705!2d114.16493561596131!3d22.44659954323836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404083f708358c9%3A0xbc931aa35ed219f0!2sGrandma&#39;s%20tofu%20pudding!5e0!3m2!1sen!2shk!4v1617187202539!5m2!1sen!2shk"
+                                name="Google Map" loading="lazy"></iframe>
+                            <p>Address: Grandma's Tofu Pudding, 2A Tai Kwong Ln, Tai Po</p>
+                        </section>
+                    </div>
+                    <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                </div>
+                <!-- JS: filter by location -->
+                <script>
+                    filterSelection("all")
+                    function filterSelection(c) {
+                        var x, i;
+                        x = document.getElementsByClassName("filterDiv");
+                        if (c == "all") c = "";
+                        // Add the "show" class (display:block in style2.css & inline in style1.css) to the filtered elements, and remove the "show" class from the elements that are not selected
+                        for (i = 0; i < x.length; i++) {
+                            w3RemoveClass(x[i], "show");
+                            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+                        }
+                    }
+                    // Show filtered elements
+                    function w3AddClass(element, name) {
+                        var i, arr1, arr2;
+                        arr1 = element.className.split(" ");
+                        arr2 = name.split(" ");
+                        for (i = 0; i < arr2.length; i++) {
+                            if (arr1.indexOf(arr2[i]) == -1) {
+                                element.className += " " + arr2[i];
+                            }
+                        }
+                    }
+                    // Hide elements that are not selected
+                    function w3RemoveClass(element, name) {
+                        var i, arr1, arr2;
+                        arr1 = element.className.split(" ");
+                        arr2 = name.split(" ");
+                        for (i = 0; i < arr2.length; i++) {
+                            while (arr1.indexOf(arr2[i]) > -1) {
+                                arr1.splice(arr1.indexOf(arr2[i]), 1);
+                            }
+                        }
+                        element.className = arr1.join(" ");
+                    }
+                    // Add active class to the current control button (highlight it) in myDropdown3 Filter
+                    var btnContainer = document.getElementById("myDropdown3");
+                    var btns = btnContainer.getElementsByClassName("btn");
+                    for (var i = 0; i < btns.length; i++) {
+                        btns[i].addEventListener("click", function () {
+                            var current = document.getElementsByClassName("active");
+                            //alert(current);   //debug
+                            current[0].className = current[0].className.replace(" active", "");
+                            //alert(current[0].className);  //debug
+                            this.className += " active";
+                            //alert(this.className);    //debug
+                        });
+                    }
+                </script>
+            </article>
+        </main>
+        <aside>
+            <button class="accordion">Find out more:</button>
+            <div class="panel">
+                <a href="https://en.tripadvisor.com.hk" target="_blank"><img src="tripadvisor.svg"
+                        alt="Hong Kong Tripadvisor"></a>
+                <a href="https://www.openrice.com/en/hongkong" target="_blank"><img src="openrice.svg"
+                        alt="Hong Kong OpenRice"></a>
+                <a href="https://guide.michelin.com/hk/en/hong-kong-region/hong-kong" target="_blank"><img
+                        src="michelin.svg" alt="MICHELIN Guide"></a>
+            </div>
+            <button class="accordion">Follow us:</button>
+            <div class="panel" id="followus">
+                <a href="https://www.facebook.com/DiscoverHongKong/" target="_blank" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/hktourismuk" target="_blank" class="fa fa-twitter"></a>
+                <a href="https://www.youtube.com/user/hongkong" target="_blank" class="fa fa-youtube"></a>
+                <a href="https://instagram.com/discoverhongkong/" target="_blank" class="fa fa-instagram"></a>
+            </div>
+        </aside>
+        <div class="icon-bar">
+            <a class="active" href="#" id="tooltip"><i class="fa fa-home"></i><span class="tooltiptext">Back to
+                    Home</span></a>
+            <!--<a href="#"><i class="fa fa-search"></i></a>-->
+            <a href="mailto: libr556-enquiry@student.ubc.ca" id="tooltip"><i class="fa fa-envelope"></i><span
+                    class="tooltiptext">Email us!</span></a>
+        </div>
+        <footer>
+            Copyright © 2021 Hong Kong Tourism Board & Time Out Hong Kong. All rights reserved.
+        </footer>
+    </div>
+
+</body>
+
+</html>

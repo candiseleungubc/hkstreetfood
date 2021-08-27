@@ -1,0 +1,596 @@
+html {
+  scroll-behavior: smooth;
+  background: #555;
+}
+body {
+  margin:0;
+  max-width: 1400px;
+  margin: auto;
+  background: white;
+  /*0px padding*/
+}
+header {
+  width: 100%;
+  overflow: hidden; /*No scrollbars are provided*/
+  text-align: center;
+  background-color: #A0A0A0; /* an image will be added on top of this*/
+  top: 0;
+}
+.header_bkgd {
+  background-image: url('hong-kong.jpg');
+  background-repeat: no-repeat; /* don't repeat the background image */
+  background-position: center; /* position the backgroun image at the centre */
+  background-size: cover;
+  color:white;
+}
+.update {
+  font-style: italic;
+}
+
+ /* Style the tab */
+ .tab {
+  overflow: hidden;
+
+  background-color: black;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: center;
+  font-family: 'Galada';
+  font-size: 20px;
+  color:white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+  color:black;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+  color:black;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+} 
+
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/*.fixed-header*/
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+}
+/*
+.changing_style {
+  color: rgb(207, 159, 197);
+  bottom:100px;
+}
+*/
+/* position of Main content */
+article {
+  float: left;
+  margin: 0 1.5%;
+  width: 71%;
+}
+aside {
+  /* position: -webkit-sticky; /*  Safari */
+  /* position: sticky;*/
+  top:0;
+  float: right;
+  margin: 0 1.5%;
+  width: 18%;
+}
+footer {
+  clear: both;   /*  no need of any element float on the left and right side. Or else the footer is shown right below the aside */
+  text-align: center;   /* footer is centered.  */
+  font-family: 'Montaga';
+  padding-top: 20px; /* not too close with the article border */
+  padding-bottom: 20px; /* not too close with the bottom border */
+  background: #333;
+  color: white;
+}
+/*  font size */
+h1 {
+  font-family: 'Acme';
+  font-size: 32px;
+}
+h2 {
+  font-family: 'Alata';
+  font-size: 24px;
+}
+p, span, a {
+  font-family: 'Fresca';
+  font-size: 18px;
+}
+/*  Image size */
+.foodImage {
+  width: 300px;
+  height: 225px;
+}
+
+/*  Google Map */
+iframe {
+  margin: 0 auto; 
+  width: 300px;
+  height: 225px;
+  border:1px solid black;
+  
+}
+
+/*style options*/
+.radio-group {
+  color:tomato;
+  background-color:powderblue;
+  font-family: 'Acme';
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  opacity: 0.6;
+  text-align: right;
+}
+.radio-group:hover{
+  opacity: 1.0;
+}
+/*modal images*/
+.foodImage {
+  border-radius: 5px;
+  cursor: zoom-in;
+  transition: 0.3s;
+}
+
+.foodImage:hover {
+  opacity: 0.7;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit in front of a positioned  element with a lower stack order */
+  padding-top: 200px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width:900px;
+  max-height:675px;
+  width: auto;
+  height: auto;
+}
+
+#caption {
+  text-align: center;
+  margin: auto;
+  display: block;
+  font-family: 'Acme';
+  font-size: 32px;
+  color: white;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.modal-content,.caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/*dropdown list*/
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0; /*left to right*/
+  background-color: #f9f9f9;
+  min-width: 210px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #2980B9;
+}
+
+.converted_price {
+  color:blue;
+  background-color: yellow;
+}
+
+.flag, .map{
+  width:24px;
+  height:18px;
+  border-radius:50%;
+  vertical-align: text-top;
+}
+
+/*dropdown list2*/
+.dropbtn2 {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  left: 0; /*left to right*/
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dropdown-content2 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content2 a:hover {background-color: #f1f1f1;}
+
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+.dropdown2:hover .dropbtn2 {
+  background-color: #2980B9;
+}
+
+/*downdrop list3*/
+.dropbtn3 {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown3 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content3 {
+  display: none;
+  position: absolute;
+  left: 0; /*left to right*/
+  background-color: #f9f9f9;
+  min-width: 190px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dropdown-content3 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content3 a:hover {background-color: #f1f1f1;}
+
+.dropdown3:hover .dropdown-content3 {
+  display: block;
+}
+
+.dropdown3:hover .dropbtn3 {
+  background-color: #2980B9;
+}
+
+
+/*Collapsibles/Accordion*/
+ /* Style the buttons that are used to open and close the accordion panel */
+ .accordion {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-style: italic;
+  background-color: #3498DB;
+  text-align: center;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #2980B9;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion.active:after {
+  content: "\2212";
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  background-color: #eee;
+  display: none;
+  text-align: center;
+  overflow: hidden;
+  transition: max-height 0.1s ease-out;
+}
+
+/*  aside */
+/*.panel {
+  padding-top: 10px;
+  font-style: italic;
+  background-color: #eee;
+  text-align: center;
+}*/
+aside a {
+  text-align: center;
+  display: block;
+}
+aside img{
+  width: 80%;
+  opacity: 1;
+}
+a:hover img{
+  opacity: 0.5;
+}
+
+/*progress bar*/
+ /* Style the header: fixed position (always stay at the top) */
+ .header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: blue;
+  width: 0%;
+} 
+
+/*vertical bar*/
+.icon-bar {
+  position:fixed; /*bottom right-handed side*/
+  bottom:0;
+  right:0;
+  width: 90px;
+  background-color: #555;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+/*Tooltip hover*/
+#tooltip {
+  position: relative;
+  /*display: inline-block;*/
+  /*border-bottom: 1px dotted black;*/
+}
+
+#tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: powderblue;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 110%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent powderblue;
+}
+
+#tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*social media icons*/
+#followus a {
+  padding: 30px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+#followus a:hover {
+  opacity: 0.5;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram { 
+  color: white;
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+
+/* filter location*/
+.filterDiv {
+  display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: inline;
+}
+
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+/*size of svg icon*/
+.fa fa-dollar {
+  color:black;
+}
